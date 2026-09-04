@@ -76,16 +76,20 @@ export function About() {
               <img
                 src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1000&q=80"
                 alt="Comunidade Gamer e Setup Retrô"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src =
+                    "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=80";
+                }}
                 className="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-nerd-bg via-nerd-bg/40 to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 bg-nerd-card/90 backdrop-blur-md p-4 rounded-xl border border-nerd-border">
                 <div className="flex items-center justify-between font-mono text-xs">
-                  <span className="text-nerd-accent font-bold">GUILDA_NERDVERSE // BASE_CENTRAL</span>
-                  <span className="text-gray-400">LATENCY: 5ms</span>
+                  <span className="text-nerd-accent font-bold">REDAÇÃO NERDVERSE // SÃO PAULO</span>
+                  <span className="text-gray-400">DESDE 2014</span>
                 </div>
                 <p className="text-xs text-gray-300 mt-1">
-                  Espaço dedicado à preservação digital e celebração da cultura nerd gamer.
+                  Espaço independente de jornalismo gamer, preservação digital e hardware de bancada.
                 </p>
               </div>
             </div>

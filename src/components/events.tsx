@@ -90,6 +90,10 @@ export function Events() {
                   <img
                     src={ev.image}
                     alt={ev.title}
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src =
+                        "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80";
+                    }}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-nerd-card via-black/40 to-transparent" />

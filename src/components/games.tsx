@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Gamepad2, Star, Play, X, Monitor, ShieldCheck, Flame } from "lucide-react";
+import { Gamepad2, Star, Play, X, Monitor, Flame, ThumbsUp } from "lucide-react";
 
 interface GameItem {
   id: string;
@@ -9,10 +9,12 @@ interface GameItem {
   genre: string;
   category: "rpg" | "action" | "indie" | "retro";
   score: number;
+  steamRating: string;
   platforms: string[];
   image: string;
+  fallbackImage: string;
   youtubeId: string;
-  description: string;
+  verdict: string;
 }
 
 export function Games() {
@@ -25,66 +27,78 @@ export function Games() {
       title: "Elden Ring: Shadow of the Erdtree",
       genre: "Action RPG // Soulslike",
       category: "rpg",
-      score: 97,
+      score: 95,
+      steamRating: "Muito Positivas (145.000+)",
       platforms: ["PC", "PS5", "XSX"],
-      image: "https://i.ytimg.com/vi/qLZenOn7WUo/maxresdefault.jpg",
+      image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg",
+      fallbackImage: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80",
       youtubeId: "qLZenOn7WUo",
-      description: "A expansão monumental de Miyazaki. Desafios impiedosos, lore densa e exploração no Reino das Sombras.",
+      verdict: "O Reino das Sombras eleva o patamar de chefes e verticalidade do mapa. Uma das melhores expansões já produzidas na história dos videogames.",
     },
     {
       id: "cyberpunk-2077",
       title: "Cyberpunk 2077: Phantom Liberty",
-      genre: "Sci-Fi RPG // Ray Tracing Overdrive",
+      genre: "RPG de Ação // Ray Tracing Overdrive",
       category: "rpg",
-      score: 92,
+      score: 90,
+      steamRating: "Extremamente Positivas (82.000+)",
       platforms: ["PC", "PS5", "XSX"],
-      image: "https://i.ytimg.com/vi/8X2kIfS6fb8/maxresdefault.jpg",
+      image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/header.jpg",
+      fallbackImage: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
       youtubeId: "8X2kIfS6fb8",
-      description: "Espionagem e conspiração política no coração de Dogtown com tecnologias de ponta em iluminação e IA.",
+      verdict: "A redenção técnica e narrativa da CD Projekt Red. Dogtown tem densidade absurda e a trama de espionagem com Idris Elba prende do início ao fim.",
     },
     {
       id: "zelda-totk",
       title: "The Legend of Zelda: Tears of the Kingdom",
-      genre: "Aventura Sandbox // Física Avançada",
+      genre: "Aventura e Sandbox // Física Aberta",
       category: "action",
       score: 96,
-      platforms: ["Switch"],
+      steamRating: "Exclusivo Nintendo Switch",
+      platforms: ["Nintendo Switch"],
       image: "https://i.ytimg.com/vi/uHGShqcAHlQ/maxresdefault.jpg",
+      fallbackImage: "https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=800&q=80",
       youtubeId: "uHGShqcAHlQ",
-      description: "Uma obra-prima de engenharia mecânica onde a criatividade do jogador redefine as leis de Hyrule.",
+      verdict: "Uma aula magna de como aproveitar cada megabyte de hardware modesto. O sistema de construção Ultrahand transforma Hyrule num parque de testes de engenharia.",
     },
     {
-      id: "hollow-knight",
+      id: "hollow-knight-silksong",
       title: "Hollow Knight: Silksong",
-      genre: "Metroidvania // 2D Pintado à Mão",
+      genre: "Metroidvania // Ação 2D",
       category: "indie",
-      score: 95,
+      score: 98,
+      steamRating: "Mais Desejado da Steam",
       platforms: ["PC", "Switch", "PS5", "XSX"],
-      image: "https://i.ytimg.com/vi/pFAknD_WO4s/maxresdefault.jpg",
+      image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1030300/header.jpg",
+      fallbackImage: "https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?auto=format&fit=crop&w=800&q=80",
       youtubeId: "pFAknD_WO4s",
-      description: "O indie mais aguardado de toda a comunidade nerd. Combates frenéticos e trilha sonora hipnotizante.",
+      verdict: "Com Hornet mais ágil e acrobática do que o Cavaleiro, Pharloom promete mecânicas refinadas de combate e a mesma direção artística primorosa.",
     },
     {
       id: "doom-eternal",
-      title: "DOOM Eternal: The Ancient Gods",
-      genre: "Fast-Paced FPS // Metal Puro",
+      title: "DOOM Eternal",
+      genre: "Fast FPS // Trilha de Metal",
       category: "action",
-      score: 90,
+      score: 88,
+      steamRating: "Muito Positivas (170.000+)",
       platforms: ["PC", "PS5", "XSX"],
-      image: "https://i.ytimg.com/vi/r2Y33t-x-b0/maxresdefault.jpg",
+      image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/782330/header.jpg",
+      fallbackImage: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
       youtubeId: "r2Y33t-x-b0",
-      description: "Reflexos sobre-humanos e pura adrenalina a 144 FPS contra hordas colossais do submundo.",
+      verdict: "O 'xadrez de alta velocidade com escopeta'. Cada arma tem utilidade cirúrgica contra as fraquezas dos demônios, com performance estável a 144 FPS.",
     },
     {
       id: "chrono-trigger",
-      title: "Chrono Trigger: Pixel Legacy",
-      genre: "JRPG Retrô // Viagem no Tempo",
+      title: "Chrono Trigger",
+      genre: "JRPG Clássico // Pixel Art",
       category: "retro",
       score: 99,
+      steamRating: "Extremamente Positivas (18.000+)",
       platforms: ["PC", "SNES", "Mobile"],
-      image: "https://i.ytimg.com/vi/W7P_40Wz164/maxresdefault.jpg",
+      image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/613830/header.jpg",
+      fallbackImage: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
       youtubeId: "W7P_40Wz164",
-      description: "A obra máxima da Square de 1995. Múltiplos finais, arte atemporal de Akira Toriyama e trilha de Yasunori Mitsuda.",
+      verdict: "O Dream Team (Sakaguchi, Horii, Toriyama e Mitsuda) produziu o ápice dos RPGs nos anos 90. Trilha atemporal e 13 finais diferentes que não envelheceram um dia.",
     },
   ];
 
@@ -93,11 +107,11 @@ export function Games() {
     : gamesList.filter((g) => g.category === activeCategory);
 
   const categories = [
-    { key: "all", label: "Todos os Títulos" },
-    { key: "rpg", label: "RPGs & Sci-Fi" },
-    { key: "action", label: "Ação & FPS" },
-    { key: "indie", label: "Indies & Obras de Arte" },
-    { key: "retro", label: "Clássicos Retrô" },
+    { key: "all", label: "Todos os Jogos" },
+    { key: "rpg", label: "RPGs & História" },
+    { key: "action", label: "Ação & Tiro" },
+    { key: "indie", label: "Indies Marcantes" },
+    { key: "retro", label: "Retrô Imortais" },
   ];
 
   return (
@@ -108,23 +122,23 @@ export function Games() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-nerd-card border border-nerd-accent/40 text-nerd-accent font-mono text-xs mb-3">
               <Gamepad2 className="w-3.5 h-3.5" />
-              <span>CATÁLOGO_OFICIAL // TITULOS_SELECIONADOS</span>
+              <span>CATÁLOGO CURADO // TESTADO PELA NOSSA EQUIPE</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-black font-mono text-white tracking-tight">
-              JOGOS EM DESTAQUE
+              JOGOS ANALISADOS
             </h2>
             <p className="mt-2 text-gray-400 text-sm max-w-xl">
-              Seleção curada de títulos que moldam a indústria dos games, com trailers em 4K e análises de desempenho.
+              Nossas análises sem enrolação: pontos fortes, mecânica real, framerate e notas da comunidade.
             </p>
           </div>
 
-          {/* Categorias / Filtros */}
+          {/* Filtros */}
           <div className="flex flex-wrap gap-2 font-mono text-xs">
             {categories.map((cat) => (
               <button
                 key={cat.key}
                 onClick={() => setActiveCategory(cat.key)}
-                className={`px-3 py-2 rounded-lg border transition-all duration-200 ${
+                className={`px-3.5 py-2 rounded-lg border transition-all duration-200 ${
                   activeCategory === cat.key
                     ? "bg-nerd-accent text-nerd-bg border-nerd-accent font-bold shadow-neon-green"
                     : "bg-nerd-card text-gray-300 border-nerd-border hover:border-nerd-cyan hover:text-white"
@@ -143,19 +157,25 @@ export function Games() {
               key={game.id}
               className="rounded-xl overflow-hidden bg-nerd-card border border-nerd-border hover:border-nerd-cyan/60 hover:shadow-neon-cyan transition-all duration-300 flex flex-col group"
             >
-              {/* Thumbnail com Overlay */}
-              <div className="relative aspect-video overflow-hidden bg-black">
+              {/* Thumbnail Oficial com Fallback Automático */}
+              <div className="relative aspect-video overflow-hidden bg-nerd-surface">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={game.image}
                   alt={game.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    if (target.src !== game.fallbackImage) {
+                      target.src = game.fallbackImage;
+                    }
+                  }}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-nerd-card via-transparent to-black/50" />
+                <div className="absolute inset-0 bg-gradient-to-t from-nerd-card via-transparent to-black/60" />
 
                 {/* Badge Score */}
                 <div className="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded bg-nerd-bg/90 border border-nerd-accent text-nerd-accent font-mono font-black text-xs">
-                  <Star className="w-3 h-3 fill-nerd-accent" />
+                  <Star className="w-3.5 h-3.5 fill-nerd-accent" />
                   <span>{game.score}</span>
                 </div>
 
@@ -164,7 +184,7 @@ export function Games() {
                   {game.platforms.map((p) => (
                     <span
                       key={p}
-                      className="px-2 py-0.5 rounded bg-black/70 border border-gray-700 text-gray-300 font-semibold"
+                      className="px-2 py-0.5 rounded bg-black/80 border border-gray-700 text-gray-200 font-semibold"
                     >
                       {p}
                     </span>
@@ -174,12 +194,12 @@ export function Games() {
                 {/* Botão Assistir Trailer */}
                 <button
                   onClick={() => setSelectedVideo({ id: game.youtubeId, title: game.title })}
-                  aria-label={`Assistir trailer de ${game.title}`}
-                  className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/50 backdrop-blur-xs"
+                  aria-label={`Ver trailer de ${game.title}`}
+                  className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/60 backdrop-blur-xs"
                 >
                   <div className="px-4 py-2 rounded-lg bg-nerd-cyan text-nerd-bg font-mono font-bold text-xs flex items-center gap-2 shadow-neon-cyan transform translate-y-2 group-hover:translate-y-0 transition-transform">
                     <Play className="w-4 h-4 fill-nerd-bg" />
-                    VER TRAILER INTERNET
+                    VER GAMEPLAY / TRAILER
                   </div>
                 </button>
               </div>
@@ -194,21 +214,21 @@ export function Games() {
                   <h3 className="font-mono font-bold text-lg text-white group-hover:text-nerd-cyan transition-colors">
                     {game.title}
                   </h3>
-                  <p className="text-gray-400 text-xs mt-2 leading-relaxed">
-                    {game.description}
+                  <p className="text-gray-300 text-xs mt-2.5 leading-relaxed">
+                    {game.verdict}
                   </p>
                 </div>
 
                 <div className="mt-5 pt-4 border-t border-nerd-border flex items-center justify-between font-mono text-xs">
-                  <span className="flex items-center gap-1 text-gray-400">
-                    <ShieldCheck className="w-3.5 h-3.5 text-nerd-accent" />
-                    Verificado em 60 FPS
+                  <span className="flex items-center gap-1 text-gray-400 text-[11px]">
+                    <ThumbsUp className="w-3.5 h-3.5 text-nerd-accent" />
+                    {game.steamRating}
                   </span>
                   <button
                     onClick={() => setSelectedVideo({ id: game.youtubeId, title: game.title })}
-                    className="text-nerd-cyan hover:underline flex items-center gap-1"
+                    className="text-nerd-cyan hover:underline font-semibold"
                   >
-                    Trailer Oficial &rarr;
+                    Trailer &rarr;
                   </button>
                 </div>
               </div>
@@ -224,7 +244,7 @@ export function Games() {
             <div className="flex items-center justify-between p-4 border-b border-nerd-border font-mono text-sm">
               <div className="flex items-center gap-2">
                 <Monitor className="w-4 h-4 text-nerd-cyan" />
-                <span className="text-white font-bold">{selectedVideo.title} — Trailer Oficial</span>
+                <span className="text-white font-bold">{selectedVideo.title}</span>
               </div>
               <button
                 onClick={() => setSelectedVideo(null)}

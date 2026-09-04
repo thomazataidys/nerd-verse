@@ -1,4 +1,4 @@
-## Pending Commands — Enviar código para o repositório remoto no GitHub
+## Pending Commands — Atualização de imagens oficiais, vídeo de fundo e texto humanizado
 
 ### Install
 ```bash
@@ -7,13 +7,10 @@ none
 
 ### Run
 ```bash
-git init
 git add .
-git commit -m "feat: initial commit nerdverse games portal"
-git branch -M main
-git remote add origin git@github.com:thomazataidys/nerd-verse.git
-git push -u origin main
+git commit -m "feat: add hero background video, fix game images with steam cdn and humanize copy"
+git push origin main
 ```
 
 ### Notes
-Certifique-se de que sua chave SSH esteja configurada no GitHub antes de executar o push.
+Comandos para registrar todas as alterações de imagens, vídeo de fundo e enviar ao GitHub.
