@@ -61,19 +61,19 @@ export function Events() {
   ];
 
   return (
-    <section id="eventos" className="py-20 border-b border-nerd-border relative">
+    <section id="eventos" className="py-20 border-b border-white/[0.08] relative bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Cabeçalho */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-nerd-card border border-nerd-amber/40 text-nerd-amber font-mono text-xs mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.04] border border-nerd-orange/40 text-nerd-orange font-mono text-xs mb-3 shadow-sm">
             <Calendar className="w-3.5 h-3.5" />
-            <span>CALENDÁRIO_OFICIAL // ROADMAP_DE_EVENTOS</span>
+            <span>CALENDÁRIO OFICIAL // ROADMAP DE EVENTOS</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black font-mono text-white tracking-tight">
             CONVENÇÕES & CAMPEONATOS
           </h2>
           <p className="mt-3 text-gray-400 text-sm sm:text-base">
-            Planeje sua rota para os maiores encontros presenciais e transmissões da comunidade nerd mundial.
+            Planeje sua rota para os maiores encontros presenciais e transmissões da comunidade gamer mundial.
           </p>
         </div>
 
@@ -82,7 +82,7 @@ export function Events() {
           {events.map((ev) => (
             <div
               key={ev.id}
-              className="rounded-2xl bg-nerd-card border border-nerd-border hover:border-nerd-amber/60 hover:shadow-neon-green transition-all duration-300 overflow-hidden flex flex-col justify-between group"
+              className="rounded-2xl bg-black/60 border border-white/[0.08] hover:border-nerd-orange/60 hover:shadow-neon-orange transition-all duration-300 overflow-hidden flex flex-col justify-between group"
             >
               <div>
                 <div className="relative aspect-video overflow-hidden bg-black">
@@ -92,27 +92,27 @@ export function Events() {
                     alt={ev.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-nerd-card via-black/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
                   {/* Badge de Destaque */}
-                  <div className="absolute top-3 left-3 px-3 py-1 rounded bg-black/80 border border-nerd-amber/50 font-mono text-xs font-bold text-nerd-amber">
+                  <div className="absolute top-3 left-3 px-3 py-1 rounded-md bg-black/80 border border-nerd-orange/50 font-mono text-xs font-bold text-nerd-orange">
                     {ev.badge}
                   </div>
 
                   {/* Data Tag */}
-                  <div className="absolute bottom-3 left-3 flex items-center gap-2 bg-nerd-bg/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-nerd-border font-mono text-xs text-white">
-                    <Calendar className="w-4 h-4 text-nerd-accent" />
+                  <div className="absolute bottom-3 left-3 flex items-center gap-2 bg-black/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 font-mono text-xs text-white">
+                    <Calendar className="w-4 h-4 text-nerd-orange" />
                     <span>{ev.date}</span>
                   </div>
                 </div>
 
                 <div className="p-6">
                   <div className="flex items-center gap-2 text-gray-400 font-mono text-xs mb-2">
-                    <MapPin className="w-4 h-4 text-nerd-cyan" />
+                    <MapPin className="w-4 h-4 text-nerd-orange" />
                     <span>{ev.location}</span>
                   </div>
 
-                  <h3 className="text-2xl font-bold font-mono text-white group-hover:text-nerd-amber transition-colors mb-3">
+                  <h3 className="text-2xl font-bold font-mono text-white group-hover:text-nerd-orange transition-colors mb-3">
                     {ev.title}
                   </h3>
 
@@ -124,9 +124,9 @@ export function Events() {
                     {ev.highlights.map((h) => (
                       <span
                         key={h}
-                        className="px-2.5 py-1 rounded bg-nerd-surface border border-nerd-border font-mono text-[11px] text-gray-300 flex items-center gap-1"
+                        className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/10 font-mono text-[11px] text-gray-300 flex items-center gap-1"
                       >
-                        <Trophy className="w-3 h-3 text-nerd-amber" />
+                        <Trophy className="w-3 h-3 text-nerd-orange" />
                         {h}
                       </span>
                     ))}
@@ -134,16 +134,16 @@ export function Events() {
                 </div>
               </div>
 
-              <div className="p-6 pt-0 border-t border-nerd-border/60 mt-4 flex items-center justify-between font-mono text-xs">
-                <span className="flex items-center gap-1.5 text-nerd-accent font-semibold">
+              <div className="p-6 pt-0 border-t border-white/[0.08] mt-4 flex items-center justify-between font-mono text-xs">
+                <span className="flex items-center gap-1.5 text-nerd-orange font-semibold">
                   <Flame className="w-3.5 h-3.5" />
                   CONFIRMADO NA AGENDA
                 </span>
                 <a
                   href="#contato"
-                  className="px-4 py-2 rounded-lg bg-nerd-surface hover:bg-nerd-border text-white border border-nerd-border flex items-center gap-2 transition-colors"
+                  className="px-4 py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-white border border-white/10 flex items-center gap-2 transition-colors"
                 >
-                  <Ticket className="w-3.5 h-3.5 text-nerd-amber" />
+                  <Ticket className="w-3.5 h-3.5 text-nerd-orange" />
                   Notificar Ingressos
                 </a>
               </div>

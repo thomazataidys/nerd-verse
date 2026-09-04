@@ -11,18 +11,18 @@ const config: Config = {
     extend: {
       colors: {
         nerd: {
-          bg: "#07090e",
-          surface: "#0e131f",
-          card: "#131929",
-          border: "#1f293d",
-          accent: "#00ff66",
+          bg: "#000000",
+          surface: "#09090b",
+          card: "#101014",
+          border: "#1e1e24",
+          accent: "#ff5400",
+          orange: "#ff5400",
+          amber: "#f59e0b",
           cyan: "#00f0ff",
           purple: "#9d4edd",
           fuchsia: "#ff007f",
-          amber: "#ffd166",
-          orange: "#ff5400",
-          surfaceDark: "#0d1117",
-          panelDark: "#151b26",
+          surfaceDark: "#08080a",
+          panelDark: "#0f0f13",
         },
       },
       fontFamily: {
@@ -38,10 +38,9 @@ const config: Config = {
         ],
       },
       boxShadow: {
-        "neon-green": "0 0 25px -5px rgba(0, 255, 102, 0.45)",
+        "neon-orange": "0 0 25px -5px rgba(255, 84, 0, 0.45)",
         "neon-cyan": "0 0 25px -5px rgba(0, 240, 255, 0.45)",
         "neon-purple": "0 0 25px -5px rgba(157, 78, 221, 0.45)",
-        "neon-orange": "0 0 25px -5px rgba(255, 84, 0, 0.45)",
       },
       animation: {
         "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",

@@ -9,19 +9,18 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden py-14 sm:py-20 border-b border-white/[0.08] bg-black">
-      {/* Vídeo de Fundo Dinâmico com Efeito Cyberpunk */}
+      {/* Vídeo de Fundo Monocromático em Preto Puro */}
       <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none">
         <video
           autoPlay
           loop
           muted={isMuted}
           playsInline
-          className="w-full h-full object-cover opacity-20 filter contrast-125 saturate-150 scale-105"
+          className="w-full h-full object-cover opacity-10 filter grayscale brightness-50 contrast-150 scale-105"
           src="https://assets.mixkit.co/videos/preview/mixkit-tunnel-of-futuristic-neon-lights-41540-large.mp4"
         />
-        {/* Camada de Gradientes Preto Puro */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/95 to-black/85" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/90" />
+        {/* Camada de Preto Puro */}
+        <div className="absolute inset-0 bg-black/90" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -45,7 +44,7 @@ export function Hero() {
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white font-mono leading-[1.05]">
               TODOS OS GRANDES JOGOS,{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-nerd-orange via-amber-400 to-nerd-cyan">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-nerd-orange via-orange-500 to-amber-400">
                 TRAILERS & ANÁLISES
               </span>
             </h1>
@@ -64,7 +63,7 @@ export function Hero() {
               </a>
               <a
                 href="#consoles"
-                className="px-6 py-3.5 rounded-xl bg-[#131926] hover:bg-[#1a2334] text-gray-200 border border-gray-700 hover:border-nerd-orange font-mono font-medium text-sm transition-all duration-200 flex items-center gap-2"
+                className="px-6 py-3.5 rounded-xl bg-black hover:bg-white/[0.06] text-gray-200 border border-white/10 hover:border-nerd-orange font-mono font-medium text-sm transition-all duration-200 flex items-center gap-2"
               >
                 <Terminal className="w-4 h-4 text-nerd-orange" />
                 COMPARATIVO DE CONSOLES
@@ -73,16 +72,16 @@ export function Hero() {
 
             {/* Badges Estilo Instant Gaming */}
             <div className="grid grid-cols-3 gap-3 pt-6 border-t border-white/10">
-              <div className="bg-white/[0.03] border border-white/[0.08] p-3.5 rounded-xl">
+              <div className="bg-black border border-white/[0.08] p-3.5 rounded-xl">
                 <div className="text-xl sm:text-2xl font-black font-mono text-nerd-orange">+120 mil</div>
                 <div className="text-xs text-gray-400 font-mono">Leitores Mensais</div>
               </div>
-              <div className="bg-white/[0.03] border border-white/[0.08] p-3.5 rounded-xl">
+              <div className="bg-black border border-white/[0.08] p-3.5 rounded-xl">
                 <div className="text-xl sm:text-2xl font-black font-mono text-nerd-orange">100% Isento</div>
                 <div className="text-xs text-gray-400 font-mono">Reviews Honestos</div>
               </div>
-              <div className="bg-white/[0.03] border border-white/[0.08] p-3.5 rounded-xl">
-                <div className="text-xl sm:text-2xl font-black font-mono text-nerd-cyan">4K HDR</div>
+              <div className="bg-black border border-white/[0.08] p-3.5 rounded-xl">
+                <div className="text-xl sm:text-2xl font-black font-mono text-nerd-orange">4K HDR</div>
                 <div className="text-xs text-gray-400 font-mono">Vídeos em Alta Fidelidade</div>
               </div>
             </div>
@@ -96,7 +95,7 @@ export function Hero() {
                 <div className="flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
                   <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-nerd-orange/80" />
                   <span className="ml-2 text-gray-200 font-semibold truncate">TRAILER: GTA VI (Trailer Mais Recente)</span>
                 </div>
                 <a

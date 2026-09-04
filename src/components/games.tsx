@@ -163,12 +163,12 @@ export function Games() {
   ];
 
   return (
-    <section id="jogos" className="py-20 border-b border-gray-800 relative bg-[#07090e]">
+    <section id="jogos" className="py-20 border-b border-white/[0.08] relative bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Cabeçalho no Estilo Instant Gaming */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#131926] border border-nerd-orange/40 text-nerd-orange font-mono text-xs mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/[0.04] border border-nerd-orange/40 text-nerd-orange font-mono text-xs mb-3">
               <Gamepad2 className="w-3.5 h-3.5 text-nerd-orange" />
               <span>CATÁLOGO ATUALIZADO // TRAILERS OFICIAIS</span>
             </div>
@@ -192,7 +192,7 @@ export function Games() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Buscar por título ou gênero..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#121722] border border-gray-800 text-white placeholder-gray-500 font-mono text-xs focus:outline-none focus:border-nerd-orange focus:ring-1 focus:ring-nerd-orange transition-all"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-gray-500 font-mono text-xs focus:outline-none focus:border-nerd-orange focus:ring-1 focus:ring-nerd-orange transition-all"
               />
               {searchQuery && (
                 <button
@@ -215,7 +215,7 @@ export function Games() {
               className={`px-4 py-2 rounded-xl whitespace-nowrap border transition-all duration-200 ${
                 activePlatform === p.key
                   ? "bg-gradient-to-r from-nerd-orange to-amber-600 text-white border-nerd-orange font-bold shadow-neon-orange"
-                  : "bg-[#111622] text-gray-300 border-gray-800 hover:border-gray-700 hover:text-white"
+                  : "bg-white/[0.03] text-gray-300 border-white/10 hover:border-white/20 hover:text-white"
               }`}
             >
               {p.label}
@@ -225,7 +225,7 @@ export function Games() {
 
         {/* Grid de Cards de Jogos Estilo Instant Gaming */}
         {filteredGames.length === 0 ? (
-          <div className="text-center py-16 bg-[#0f1420] rounded-2xl border border-gray-800 font-mono text-sm text-gray-400">
+          <div className="text-center py-16 bg-white/[0.02] rounded-2xl border border-white/10 font-mono text-sm text-gray-400">
             Nenhum jogo encontrado para o termo de busca informado.
           </div>
         ) : (
@@ -233,10 +233,10 @@ export function Games() {
             {filteredGames.map((game) => (
               <div
                 key={game.id}
-                className="rounded-2xl overflow-hidden bg-[#101522] border border-gray-800/90 hover:border-nerd-orange/70 hover:shadow-neon-orange transition-all duration-300 flex flex-col group"
+                className="rounded-2xl overflow-hidden bg-black/60 border border-white/[0.08] hover:border-nerd-orange/70 hover:shadow-neon-orange transition-all duration-300 flex flex-col group"
               >
                 {/* Imagem do Jogo com Badges Estilo Instant Gaming */}
-                <div className="relative aspect-[16/10] overflow-hidden bg-[#0a0d14]">
+                <div className="relative aspect-[16/10] overflow-hidden bg-black">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={game.image}
@@ -249,7 +249,7 @@ export function Games() {
                     }}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#101522] via-transparent to-black/60" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60" />
 
                   {/* Tag Instant Gaming (canto superior esquerdo) */}
                   <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-nerd-orange text-white font-mono font-black text-[10px] uppercase tracking-wider shadow-sm">
@@ -275,7 +275,7 @@ export function Games() {
                       href={`https://www.youtube.com/watch?v=${game.youtubeId}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-xl bg-[#1c2333] hover:bg-gray-700 text-gray-200 border border-gray-600 transition-transform transform translate-y-2 group-hover:translate-y-0"
+                      className="p-2 rounded-xl bg-black/80 hover:bg-white/10 text-gray-200 border border-white/10 transition-transform transform translate-y-2 group-hover:translate-y-0"
                       title="Abrir diretamente no YouTube"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
@@ -291,7 +291,7 @@ export function Games() {
                       {game.platforms.map((p) => (
                         <span
                           key={p}
-                          className="px-1.5 py-0.5 rounded bg-[#161d2d] text-gray-300 border border-gray-800"
+                          className="px-1.5 py-0.5 rounded bg-white/[0.04] text-gray-300 border border-white/10"
                         >
                           {p}
                         </span>
@@ -337,10 +337,10 @@ export function Games() {
 
       {/* Modal Resiliente com Embed e Link Externo no YouTube */}
       {selectedVideo && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-          <div className="relative w-full max-w-4xl bg-[#0f1420] rounded-2xl border-2 border-nerd-orange shadow-neon-orange overflow-hidden">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md">
+          <div className="relative w-full max-w-4xl bg-black rounded-2xl border-2 border-nerd-orange shadow-neon-orange overflow-hidden">
             {/* Barra de Título do Modal */}
-            <div className="flex items-center justify-between p-4 border-b border-gray-800 font-mono text-sm bg-[#0a0d14]">
+            <div className="flex items-center justify-between p-4 border-b border-white/10 font-mono text-sm bg-black">
               <div className="flex items-center gap-2 truncate">
                 <Monitor className="w-4 h-4 text-nerd-orange" />
                 <span className="text-white font-bold truncate">{selectedVideo.title} — Trailer Oficial</span>
@@ -358,7 +358,7 @@ export function Games() {
                 <button
                   onClick={() => setSelectedVideo(null)}
                   aria-label="Fechar trailer"
-                  className="p-1 rounded-lg bg-[#192233] border border-gray-700 text-gray-300 hover:text-white hover:border-red-500 transition-colors"
+                  className="p-1 rounded-lg bg-black border border-white/10 text-gray-300 hover:text-white hover:border-red-500 transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -377,7 +377,7 @@ export function Games() {
             </div>
 
             {/* Barra de Ajuda / Fallback */}
-            <div className="p-3 bg-[#0a0d14] border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between font-mono text-xs text-gray-400 gap-2">
+            <div className="p-3 bg-black border-t border-white/10 flex flex-col sm:flex-row items-center justify-between font-mono text-xs text-gray-400 gap-2">
               <span>Se o seu navegador ou bloqueador de anúncios impedir o vídeo de reproduzir:</span>
               <a
                 href={`https://www.youtube.com/watch?v=${selectedVideo.id}`}

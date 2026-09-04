@@ -76,11 +76,11 @@ export function Consoles() {
   ];
 
   return (
-    <section id="consoles" className="py-20 border-b border-nerd-border relative">
+    <section id="consoles" className="py-20 border-b border-white/[0.08] relative bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Cabeçalho */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#131926] border border-nerd-orange/40 text-nerd-orange font-mono text-xs mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.04] border border-nerd-orange/40 text-nerd-orange font-mono text-xs mb-3 shadow-sm">
             <Cpu className="w-3.5 h-3.5" />
             <span>LABORATÓRIO DE HARDWARE // ESPECIFICAÇÕES TÉCNICAS</span>
           </div>
@@ -97,7 +97,7 @@ export function Consoles() {
           {consoles.map((c) => (
             <div
               key={c.id}
-              className="rounded-2xl bg-[#101522] border border-gray-800 hover:border-nerd-orange/60 hover:shadow-neon-orange transition-all duration-300 p-6 flex flex-col justify-between group"
+              className="rounded-2xl bg-black/60 border border-white/[0.08] hover:border-nerd-orange/60 hover:shadow-neon-orange transition-all duration-300 p-6 flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-start justify-between gap-4 mb-4">
@@ -105,55 +105,55 @@ export function Consoles() {
                     <span className="font-mono text-xs text-nerd-orange font-semibold uppercase">
                       {c.generation}
                     </span>
-                    <h3 className="text-2xl font-bold font-mono text-white group-hover:text-nerd-cyan transition-colors">
+                    <h3 className="text-2xl font-bold font-mono text-white group-hover:text-nerd-orange transition-colors">
                       {c.name}
                     </h3>
                     <p className="text-xs text-gray-400 font-mono mt-0.5">{c.maker}</p>
                   </div>
-                  <div className="px-3 py-1 rounded bg-nerd-surface border border-nerd-cyan/30 text-right">
+                  <div className="px-3 py-1 rounded-xl bg-white/[0.04] border border-nerd-orange/30 text-right">
                     <span className="font-mono text-[10px] text-gray-400 block">BENCHMARK</span>
-                    <span className="font-mono text-sm font-bold text-nerd-cyan">{c.nerdRating}</span>
+                    <span className="font-mono text-sm font-bold text-nerd-orange">{c.nerdRating}</span>
                   </div>
                 </div>
 
                 {/* Imagem do Console da Internet */}
-                <div className="relative aspect-video rounded-xl overflow-hidden mb-6 bg-black border border-nerd-border">
+                <div className="relative aspect-video rounded-xl overflow-hidden mb-6 bg-black border border-white/10">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={c.image}
                     alt={c.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-85"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-nerd-card via-transparent to-transparent" />
-                  <div className="absolute bottom-3 left-3 right-3 bg-nerd-bg/85 backdrop-blur-md px-3 py-1.5 rounded-lg border border-nerd-border flex items-center gap-2">
-                    <Zap className="w-3.5 h-3.5 text-nerd-accent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3 bg-black/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2">
+                    <Zap className="w-3.5 h-3.5 text-nerd-orange" />
                     <span className="font-mono text-xs text-gray-200 truncate">{c.highlight}</span>
                   </div>
                 </div>
 
                 {/* Tabela de Especificações */}
                 <div className="grid grid-cols-2 gap-3 mb-6 font-mono text-xs">
-                  <div className="p-2.5 rounded-lg bg-nerd-surface/80 border border-nerd-border">
+                  <div className="p-2.5 rounded-lg bg-white/[0.03] border border-white/[0.08]">
                     <span className="text-[10px] text-gray-400 block mb-0.5 flex items-center gap-1">
-                      <Cpu className="w-3 h-3 text-nerd-cyan" /> PROCESSADOR
+                      <Cpu className="w-3 h-3 text-nerd-orange" /> PROCESSADOR
                     </span>
                     <span className="text-gray-200 font-medium truncate block">{c.cpu}</span>
                   </div>
-                  <div className="p-2.5 rounded-lg bg-nerd-surface/80 border border-nerd-border">
+                  <div className="p-2.5 rounded-lg bg-white/[0.03] border border-white/[0.08]">
                     <span className="text-[10px] text-gray-400 block mb-0.5 flex items-center gap-1">
-                      <Zap className="w-3 h-3 text-nerd-accent" /> GRÁFICOS (GPU)
+                      <Zap className="w-3 h-3 text-nerd-orange" /> GRÁFICOS (GPU)
                     </span>
                     <span className="text-gray-200 font-medium truncate block">{c.gpu}</span>
                   </div>
-                  <div className="p-2.5 rounded-lg bg-nerd-surface/80 border border-nerd-border">
+                  <div className="p-2.5 rounded-lg bg-white/[0.03] border border-white/[0.08]">
                     <span className="text-[10px] text-gray-400 block mb-0.5 flex items-center gap-1">
-                      <HardDrive className="w-3 h-3 text-nerd-purple" /> ARMAZENAMENTO
+                      <HardDrive className="w-3 h-3 text-nerd-orange" /> ARMAZENAMENTO
                     </span>
                     <span className="text-gray-200 font-medium truncate block">{c.storage}</span>
                   </div>
-                  <div className="p-2.5 rounded-lg bg-nerd-surface/80 border border-nerd-border">
+                  <div className="p-2.5 rounded-lg bg-white/[0.03] border border-white/[0.08]">
                     <span className="text-[10px] text-gray-400 block mb-0.5 flex items-center gap-1">
-                      <Tv className="w-3 h-3 text-nerd-amber" /> SAÍDA DE VÍDEO
+                      <Tv className="w-3 h-3 text-nerd-orange" /> SAÍDA DE VÍDEO
                     </span>
                     <span className="text-gray-200 font-medium truncate block">{c.resolution}</span>
                   </div>
@@ -161,13 +161,13 @@ export function Consoles() {
               </div>
 
               {/* Badges de Destaques */}
-              <div className="pt-4 border-t border-nerd-border flex flex-wrap gap-2">
+              <div className="pt-4 border-t border-white/[0.08] flex flex-wrap gap-2">
                 {c.features.map((feat) => (
                   <span
                     key={feat}
-                    className="inline-flex items-center gap-1 text-[11px] font-mono text-gray-300 bg-nerd-surface px-2.5 py-1 rounded-md border border-nerd-border"
+                    className="inline-flex items-center gap-1 text-[11px] font-mono text-gray-300 bg-white/[0.04] px-2.5 py-1 rounded-md border border-white/10"
                   >
-                    <CheckCircle2 className="w-3 h-3 text-nerd-accent" />
+                    <CheckCircle2 className="w-3 h-3 text-nerd-orange" />
                     {feat}
                   </span>
                 ))}

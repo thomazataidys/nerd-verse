@@ -61,26 +61,26 @@ export function News() {
   ];
 
   return (
-    <section id="noticias" className="py-20 border-b border-nerd-border relative">
+    <section id="noticias" className="py-20 border-b border-white/[0.08] relative bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Cabeçalho */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-nerd-card border border-nerd-fuchsia/40 text-nerd-fuchsia font-mono text-xs mb-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.04] border border-nerd-orange/40 text-nerd-orange font-mono text-xs mb-3 shadow-sm">
               <Newspaper className="w-3.5 h-3.5" />
-              <span>FEED_DE_NOTÍCIAS // TRANSMISSÕES_RECENTES</span>
+              <span>FEED DE NOTÍCIAS // JORNALISMO EM TEMPO REAL</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-black font-mono text-white tracking-tight">
               NOTÍCIAS DO MUNDO GAMER
             </h2>
             <p className="mt-2 text-gray-400 text-sm max-w-xl">
-              Fatos apurados, atualizações de tecnologia e os momentos cruciais do universo nerd.
+              Fatos apurados, atualizações de tecnologia e os momentos cruciais do universo dos games.
             </p>
           </div>
 
-          <div className="flex items-center gap-2 font-mono text-xs text-nerd-cyan">
-            <span className="w-2 h-2 rounded-full bg-nerd-cyan animate-ping" />
-            <span>ATUALIZADO A CADA HORA</span>
+          <div className="flex items-center gap-2 font-mono text-xs text-nerd-orange">
+            <span className="w-2 h-2 rounded-full bg-nerd-orange animate-ping" />
+            <span>ATUALIZADO CONSTANTEMENTE</span>
           </div>
         </div>
 
@@ -89,7 +89,7 @@ export function News() {
           {articles.map((item) => (
             <article
               key={item.id}
-              className="rounded-2xl bg-nerd-card border border-nerd-border hover:border-nerd-fuchsia/50 hover:shadow-neon-purple transition-all duration-300 overflow-hidden flex flex-col sm:flex-row group"
+              className="rounded-2xl bg-black/60 border border-white/[0.08] hover:border-nerd-orange/60 hover:shadow-neon-orange transition-all duration-300 overflow-hidden flex flex-col sm:flex-row group"
             >
               <div className="sm:w-2/5 relative aspect-video sm:aspect-auto overflow-hidden bg-black">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -98,7 +98,7 @@ export function News() {
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-85"
                 />
-                <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/80 border border-nerd-border text-[10px] font-mono text-nerd-fuchsia font-bold">
+                <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-nerd-orange text-white text-[10px] font-mono font-bold">
                   {item.category}
                 </div>
               </div>
@@ -107,14 +107,14 @@ export function News() {
                 <div>
                   <div className="flex items-center gap-3 text-gray-400 font-mono text-[11px] mb-2">
                     <span className="flex items-center gap-1">
-                      <Clock className="w-3 h-3 text-nerd-accent" />
+                      <Clock className="w-3 h-3 text-nerd-orange" />
                       {item.date}
                     </span>
                     <span>•</span>
                     <span>{item.readTime}</span>
                   </div>
 
-                  <h3 className="font-mono font-bold text-base text-white group-hover:text-nerd-cyan transition-colors line-clamp-2">
+                  <h3 className="font-mono font-bold text-base text-white group-hover:text-nerd-orange transition-colors line-clamp-2">
                     {item.title}
                   </h3>
 
@@ -123,14 +123,14 @@ export function News() {
                   </p>
                 </div>
 
-                <div className="mt-4 pt-4 border-t border-nerd-border flex items-center justify-between font-mono text-xs">
+                <div className="mt-4 pt-4 border-t border-white/[0.08] flex items-center justify-between font-mono text-xs">
                   <div className="flex items-center gap-1.5 text-gray-400 text-[11px]">
-                    <User className="w-3 h-3 text-nerd-purple" />
+                    <User className="w-3 h-3 text-nerd-orange" />
                     <span>{item.author}</span>
                   </div>
 
-                  <div className="flex items-center gap-1 text-nerd-cyan font-semibold group-hover:translate-x-1 transition-transform">
-                    <span>Ler</span>
+                  <div className="flex items-center gap-1 text-nerd-orange font-semibold group-hover:translate-x-1 transition-transform">
+                    <span>Ler matéria</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </div>
                 </div>

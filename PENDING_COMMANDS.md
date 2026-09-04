@@ -1,4 +1,4 @@
-## Pending Commands — Correção do erro de build da Vercel (remoção de event handlers em Server Components)
+## Pending Commands — Remoção completa de fundos e elementos verdes/azuis para preto puro
 
 ### Install
 ```bash
@@ -8,9 +8,9 @@ none
 ### Run
 ```bash
 git add .
-git commit -m "fix(build): remove onError event handlers from Server Components to resolve Vercel build error"
+git commit -m "style: remove all blue and green backgrounds in favor of pure black and orange highlights"
 git push origin main
 ```
 
 ### Notes
-O erro na Vercel ocorria pela passagem de funções onError em Server Components durante a geração estática da página.
+Todos os gradientes, botões, modais e fundos azulados foram substituídos por preto puro e acentos laranja vibrante.
