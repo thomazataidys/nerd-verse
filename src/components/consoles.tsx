@@ -80,15 +80,15 @@ export function Consoles() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Cabeçalho */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-nerd-card border border-nerd-cyan/40 text-nerd-cyan font-mono text-xs mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#131926] border border-nerd-orange/40 text-nerd-orange font-mono text-xs mb-3">
             <Cpu className="w-3.5 h-3.5" />
-            <span>HARDWARE_LAB // DISPOSITIVOS_E_ARQUITETURA</span>
+            <span>LABORATÓRIO DE HARDWARE // ESPECIFICAÇÕES TÉCNICAS</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black font-mono text-white tracking-tight">
             CONSOLES & PLATAFORMAS
           </h2>
           <p className="mt-3 text-gray-400 text-sm sm:text-base">
-            Métricas técnicas, arquitetura de silício e benchmarks das máquinas que rodam os universos virtuais.
+            Métricas de silício, poder de processamento e análise técnica dos consoles da geração atual e portáteis.
           </p>
         </div>
 
@@ -97,12 +97,12 @@ export function Consoles() {
           {consoles.map((c) => (
             <div
               key={c.id}
-              className="rounded-2xl bg-nerd-card border border-nerd-border hover:border-nerd-cyan/60 hover:shadow-neon-cyan transition-all duration-300 p-6 flex flex-col justify-between group"
+              className="rounded-2xl bg-[#101522] border border-gray-800 hover:border-nerd-orange/60 hover:shadow-neon-orange transition-all duration-300 p-6 flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div>
-                    <span className="font-mono text-xs text-nerd-accent font-semibold uppercase">
+                    <span className="font-mono text-xs text-nerd-orange font-semibold uppercase">
                       {c.generation}
                     </span>
                     <h3 className="text-2xl font-bold font-mono text-white group-hover:text-nerd-cyan transition-colors">

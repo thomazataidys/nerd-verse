@@ -236,17 +236,17 @@ export function Contact() {
                   <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="w-full py-3.5 rounded-xl bg-nerd-accent hover:bg-emerald-400 text-nerd-bg font-mono font-black text-sm tracking-wider shadow-neon-green transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                    className="w-full py-3.5 rounded-xl bg-gradient-to-r from-nerd-orange to-amber-600 hover:from-amber-600 hover:to-nerd-orange text-white font-mono font-bold text-sm tracking-wider shadow-neon-orange transition-all flex items-center justify-center gap-2 disabled:opacity-50"
                   >
                     {status === "sending" ? (
                       <>
-                        <span className="w-4 h-4 border-2 border-nerd-bg border-t-transparent rounded-full animate-spin" />
-                        TRANSMITINDO PACOTES UDP...
+                        <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        TRANSMITINDO MENSAGEM...
                       </>
                     ) : (
                       <>
                         <Send className="w-4 h-4" />
-                        ENVIAR TRANSMISSÃO PARA A BASE
+                        ENVIAR MENSAGEM PARA A REDAÇÃO
                       </>
                     )}
                   </button>

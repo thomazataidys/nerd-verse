@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { Play, Flame, Shield, Terminal, Volume2, VolumeX, Eye } from "lucide-react";
+import { Play, Flame, Shield, Terminal, Volume2, VolumeX, Eye, ExternalLink } from "lucide-react";
 
 export function Hero() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
 
   return (
-    <section className="relative overflow-hidden py-16 sm:py-24 border-b border-nerd-border">
+    <section className="relative overflow-hidden py-14 sm:py-20 border-b border-gray-800">
       {/* Vídeo de Fundo Dinâmico com Efeito Cyberpunk */}
       <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none">
         <video
@@ -16,94 +16,99 @@ export function Hero() {
           loop
           muted={isMuted}
           playsInline
-          className="w-full h-full object-cover opacity-25 filter contrast-125 saturate-150 scale-105"
+          className="w-full h-full object-cover opacity-20 filter contrast-125 saturate-150 scale-105"
           src="https://assets.mixkit.co/videos/preview/mixkit-tunnel-of-futuristic-neon-lights-41540-large.mp4"
         />
-        {/* Camada de Gradientes para Legibilidade Perfeita */}
-        <div className="absolute inset-0 bg-gradient-to-r from-nerd-bg via-nerd-bg/90 to-nerd-bg/80" />
-        <div className="absolute inset-0 bg-gradient-to-t from-nerd-bg via-transparent to-nerd-bg/80" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-nerd-cyan/10 via-transparent to-transparent" />
+        {/* Camada de Gradientes Estilo Instant Gaming */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#07090e] via-[#07090e]/95 to-[#0a0e17]/85" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#07090e] via-transparent to-[#07090e]/90" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Coluna Texto — Tom Editorial Real e Autêntico */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Coluna Texto — Design Limpo e Impactante */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-nerd-card/90 border border-nerd-cyan/40 text-nerd-cyan font-mono text-xs shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-nerd-accent animate-pulse" />
-              <span>REDAÇÃO NERDVERSE // EDIÇÃO DE 2025</span>
-              <span className="text-gray-500">|</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#131926]/90 border border-nerd-orange/40 text-nerd-orange font-mono text-xs shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-nerd-orange animate-ping" />
+              <span>DESTAQUE DA SEMANA // REDAÇÃO NERD</span>
+              <span className="text-gray-600">|</span>
               <button
                 type="button"
                 onClick={() => setIsMuted(!isMuted)}
-                className="text-gray-300 hover:text-white flex items-center gap-1 transition-colors"
+                className="text-gray-400 hover:text-white flex items-center gap-1 transition-colors"
                 title={isMuted ? "Ativar som do fundo" : "Mutar som do fundo"}
               >
-                {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-nerd-accent" />}
-                <span className="text-[10px]">{isMuted ? "MUTADO" : "ÁUDIO ON"}</span>
+                {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-nerd-orange" />}
+                <span className="text-[10px]">{isMuted ? "MUTADO" : "SOM ATIVO"}</span>
               </button>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white font-mono leading-none">
-              JORNALISMO GAMER, HARDWARE E{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-nerd-cyan via-nerd-accent to-nerd-purple">
-                CULTURA GEEK
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white font-mono leading-[1.05]">
+              TODOS OS GRANDES JOGOS,{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-nerd-orange via-amber-400 to-nerd-cyan">
+                TRAILERS & ANÁLISES
               </span>
             </h1>
 
             <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl">
-              Análises técnicas sem rabo preso com distribuidora, comparativos reais de silício e frametime na prática. De cartuchos de Mega Drive a placas com Ray Tracing.
+              Análises diretas, testes de performance em 4K e os trailers oficiais mais aguardados da indústria dos games. Sem filtros publicitários.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <a
                 href="#jogos"
-                className="px-6 py-3 rounded-lg bg-nerd-accent hover:bg-emerald-400 text-nerd-bg font-mono font-bold text-sm tracking-wide shadow-neon-green transition-all duration-300 flex items-center gap-2"
+                className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-nerd-orange to-amber-600 hover:from-amber-600 hover:to-nerd-orange text-white font-mono font-bold text-sm tracking-wide shadow-neon-orange transition-all duration-300 flex items-center gap-2"
               >
                 <Flame className="w-4 h-4" />
                 EXPLORAR CATÁLOGO DE JOGOS
               </a>
               <a
                 href="#consoles"
-                className="px-6 py-3 rounded-lg bg-nerd-card hover:bg-nerd-surface text-gray-200 border border-nerd-border hover:border-nerd-cyan font-mono font-medium text-sm transition-all duration-200 flex items-center gap-2"
+                className="px-6 py-3.5 rounded-xl bg-[#131926] hover:bg-[#1a2334] text-gray-200 border border-gray-700 hover:border-nerd-orange font-mono font-medium text-sm transition-all duration-200 flex items-center gap-2"
               >
-                <Terminal className="w-4 h-4 text-nerd-cyan" />
+                <Terminal className="w-4 h-4 text-nerd-orange" />
                 COMPARATIVO DE CONSOLES
               </a>
             </div>
 
-            {/* Métricas Autênticas */}
-            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-nerd-border/60">
-              <div className="bg-nerd-surface/80 backdrop-blur-sm border border-nerd-border p-3.5 rounded-lg">
-                <div className="text-xl sm:text-2xl font-black font-mono text-nerd-cyan">+120 mil</div>
+            {/* Badges Estilo Instant Gaming */}
+            <div className="grid grid-cols-3 gap-3 pt-6 border-t border-gray-800">
+              <div className="bg-[#101520]/80 border border-gray-800 p-3.5 rounded-xl">
+                <div className="text-xl sm:text-2xl font-black font-mono text-nerd-orange">+120 mil</div>
                 <div className="text-xs text-gray-400 font-mono">Leitores Mensais</div>
               </div>
-              <div className="bg-nerd-surface/80 backdrop-blur-sm border border-nerd-border p-3.5 rounded-lg">
-                <div className="text-xl sm:text-2xl font-black font-mono text-nerd-accent">0% Jabá</div>
-                <div className="text-xs text-gray-400 font-mono">Reviews 100% Honestos</div>
+              <div className="bg-[#101520]/80 border border-gray-800 p-3.5 rounded-xl">
+                <div className="text-xl sm:text-2xl font-black font-mono text-nerd-accent">100% Isento</div>
+                <div className="text-xs text-gray-400 font-mono">Reviews Honestos</div>
               </div>
-              <div className="bg-nerd-surface/80 backdrop-blur-sm border border-nerd-border p-3.5 rounded-lg">
-                <div className="text-xl sm:text-2xl font-black font-mono text-nerd-purple">12 Anos</div>
-                <div className="text-xs text-gray-400 font-mono">Estrada na Comunidade</div>
+              <div className="bg-[#101520]/80 border border-gray-800 p-3.5 rounded-xl">
+                <div className="text-xl sm:text-2xl font-black font-mono text-nerd-cyan">4K HDR</div>
+                <div className="text-xs text-gray-400 font-mono">Vídeos em Alta Fidelidade</div>
               </div>
             </div>
           </div>
 
-          {/* Coluna Vídeo Embed da Internet */}
+          {/* Coluna Vídeo Player — com suporte a Embed e Link Direto no YouTube */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-2xl bg-nerd-card border-2 border-nerd-border hover:border-nerd-cyan/60 p-2 shadow-2xl transition-all duration-300 group">
-              {/* Terminal Title Bar */}
-              <div className="flex items-center justify-between px-3 py-2 border-b border-nerd-border font-mono text-xs text-gray-400 bg-nerd-surface rounded-t-xl">
+            <div className="relative rounded-2xl bg-[#0f1420] border-2 border-gray-800 hover:border-nerd-orange/70 p-2 shadow-2xl transition-all duration-300 group">
+              {/* Header do Player */}
+              <div className="flex items-center justify-between px-3 py-2 border-b border-gray-800 font-mono text-xs text-gray-400 bg-[#0b0e17] rounded-t-xl">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
                   <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
                   <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
-                  <span className="ml-2 text-gray-300 font-semibold">FEED: GTA_VI_TRAILER_01.mp4</span>
+                  <span className="ml-2 text-gray-200 font-semibold truncate">TRAILER: GTA VI (Trailer 1)</span>
                 </div>
-                <span className="text-nerd-cyan text-[10px] uppercase tracking-wider flex items-center gap-1">
-                  <Eye className="w-3 h-3 text-nerd-accent" />
-                  250M VIEWS
-                </span>
+                <a
+                  href="https://www.youtube.com/watch?v=QdBZY2fkU-0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-nerd-orange hover:text-amber-400 text-[10px] flex items-center gap-1 font-bold"
+                  title="Abrir no YouTube"
+                >
+                  YOUTUBE
+                  <ExternalLink className="w-3 h-3" />
+                </a>
               </div>
 
               {/* Video Player */}
@@ -111,7 +116,7 @@ export function Hero() {
                 {isPlaying ? (
                   <iframe
                     className="w-full h-full"
-                    src="https://www.youtube-nocookie.com/embed/QdBZY2fkU-0?autoplay=1&rel=0&modestbranding=1"
+                    src="https://www.youtube.com/embed/QdBZY2fkU-0?autoplay=1&rel=0&enablejsapi=1"
                     title="Grand Theft Auto VI Trailer Oficial"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
@@ -121,7 +126,6 @@ export function Hero() {
                     className="relative w-full h-full cursor-pointer group/screen"
                     onClick={() => setIsPlaying(true)}
                   >
-                    {/* Imagem com Fallback Garantido */}
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src="https://i.ytimg.com/vi/QdBZY2fkU-0/maxresdefault.jpg"
@@ -132,27 +136,40 @@ export function Hero() {
                       }}
                       className="w-full h-full object-cover group-hover/screen:scale-105 transition-transform duration-500 opacity-90"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-nerd-bg via-nerd-bg/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                     
                     {/* Botão de Play */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-                      <div className="w-16 h-16 rounded-full bg-nerd-cyan/20 border-2 border-nerd-cyan flex items-center justify-center text-white group-hover/screen:scale-110 group-hover/screen:shadow-neon-cyan transition-all duration-300 backdrop-blur-md">
-                        <Play className="w-8 h-8 fill-nerd-cyan text-nerd-cyan ml-1" />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-2.5">
+                      <div className="w-16 h-16 rounded-full bg-nerd-orange/30 border-2 border-nerd-orange flex items-center justify-center text-white group-hover/screen:scale-110 shadow-neon-orange transition-all duration-300 backdrop-blur-md">
+                        <Play className="w-8 h-8 fill-nerd-orange text-nerd-orange ml-1" />
                       </div>
-                      <span className="font-mono text-xs font-bold tracking-widest text-nerd-cyan uppercase bg-nerd-bg/85 px-3 py-1 rounded border border-nerd-cyan/40">
-                        RODAR TRAILER OFICIAL
+                      <span className="font-mono text-xs font-bold tracking-wider text-white uppercase bg-black/80 px-3 py-1 rounded-full border border-nerd-orange/40">
+                        ASSISTIR TRAILER 4K
                       </span>
                     </div>
 
                     <div className="absolute bottom-3 left-3 right-3 flex justify-between items-center text-[11px] font-mono text-gray-300">
-                      <span className="flex items-center gap-1">
-                        <Shield className="w-3.5 h-3.5 text-nerd-accent" />
-                        Rockstar Games // Vice City 2025
+                      <span className="flex items-center gap-1 truncate">
+                        <Shield className="w-3.5 h-3.5 text-nerd-orange" />
+                        Rockstar Games Oficial
                       </span>
-                      <span className="text-nerd-accent font-bold">4K 60FPS</span>
+                      <span className="text-nerd-orange font-bold">4K 60FPS</span>
                     </div>
                   </div>
                 )}
+              </div>
+
+              {/* Barra Inferior com Link Direto de Escape */}
+              <div className="px-3 py-2 bg-[#0b0e17] rounded-b-xl border-t border-gray-800/80 flex items-center justify-between text-[11px] font-mono">
+                <span className="text-gray-400">Problemas para carregar o player?</span>
+                <a
+                  href="https://www.youtube.com/watch?v=QdBZY2fkU-0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-nerd-orange hover:underline font-bold flex items-center gap-1"
+                >
+                  Abrir direto no YouTube &rarr;
+                </a>
               </div>
             </div>
           </div>

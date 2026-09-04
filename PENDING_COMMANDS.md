@@ -1,4 +1,4 @@
-## Pending Commands — Atualização de imagens oficiais, vídeo de fundo e texto humanizado
+## Pending Commands — Correção dos trailers do YouTube e redesign inspirado no Instant Gaming
 
 ### Install
 ```bash
@@ -8,9 +8,9 @@ none
 ### Run
 ```bash
 git add .
-git commit -m "feat: add hero background video, fix game images with steam cdn and humanize copy"
+git commit -m "fix: update youtube trailer embeds with fallback links and redesign cards inspired by instant gaming"
 git push origin main
 ```
 
 ### Notes
-Comandos para registrar todas as alterações de imagens, vídeo de fundo e enviar ao GitHub.
+Comandos para registrar a correção dos trailers com botão direto do YouTube e o novo visual inspirado no Instant Gaming.

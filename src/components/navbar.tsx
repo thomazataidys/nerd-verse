@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Terminal, Gamepad2, Menu, X, Cpu, Calendar, MessageSquare, Newspaper, Users } from "lucide-react";
+import { Terminal, Gamepad2, Menu, X, Cpu, Calendar, MessageSquare, Newspaper, Users, Sparkles } from "lucide-react";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,53 +16,72 @@ export function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-nerd-bg/85 border-b border-nerd-border">
+    <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#0b0e14]/90 border-b border-gray-800/80">
+      {/* Top Banner de Telemetria Nerd */}
+      <div className="bg-gradient-to-r from-nerd-orange/15 via-nerd-cyan/15 to-nerd-purple/15 border-b border-gray-800/40 text-[11px] font-mono py-1 px-4 hidden sm:block">
+        <div className="max-w-7xl mx-auto flex items-center justify-between text-gray-400">
+          <div className="flex items-center gap-3">
+            <span className="flex items-center gap-1 text-nerd-orange font-bold">
+              <Sparkles className="w-3 h-3 text-nerd-orange" />
+              PORTAL NERDVERSE GAMING
+            </span>
+            <span>//</span>
+            <span>COBERTURA 4K, HARDWARE & REVIEWS</span>
+          </div>
+          <div className="flex items-center gap-4 text-[10px]">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-nerd-accent animate-pulse" />
+              STATUS: SERVIDORES 100% OPERACIONAIS
+            </span>
+            <span>PING: 12ms</span>
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo Nerd */}
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-lg bg-nerd-card border border-nerd-cyan/40 flex items-center justify-center text-nerd-cyan group-hover:border-nerd-cyan group-hover:shadow-neon-cyan transition-all duration-300">
-              <Terminal className="w-5 h-5" />
+          {/* Logo Estilo Instant Gaming + Nerd */}
+          <a href="#" className="flex items-center gap-2.5 group">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-nerd-orange to-amber-600 p-0.5 shadow-neon-orange group-hover:scale-105 transition-all duration-300">
+              <div className="w-full h-full bg-[#0e121a] rounded-[10px] flex items-center justify-center text-nerd-orange group-hover:text-white transition-colors">
+                <Terminal className="w-5 h-5" />
+              </div>
             </div>
             <div className="flex flex-col">
-              <span className="font-mono font-black text-lg tracking-wider text-white group-hover:text-nerd-cyan transition-colors">
-                NERD<span className="text-nerd-accent">_VERSE</span>
+              <span className="font-mono font-black text-xl tracking-tight text-white flex items-center gap-1">
+                NERD<span className="text-nerd-orange">VERSE</span>
               </span>
-              <span className="font-mono text-[10px] text-gray-400 tracking-widest uppercase">
-                v2.0.4 // ARCADE_NET
+              <span className="text-[9px] font-mono text-gray-400 tracking-wider uppercase -mt-1">
+                GAMING ARCHIVE & HUB
               </span>
             </div>
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-1 font-mono text-xs">
+          <nav className="hidden lg:flex items-center gap-1 font-mono text-xs">
             {navLinks.map((link) => {
               const Icon = link.icon;
               return (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="flex items-center gap-1.5 px-3 py-2 rounded-md text-gray-300 hover:text-nerd-cyan hover:bg-nerd-surface/80 border border-transparent hover:border-nerd-border transition-all duration-200"
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#161c28] border border-transparent hover:border-gray-700/70 transition-all duration-150"
                 >
-                  <Icon className="w-3.5 h-3.5 text-nerd-accent" />
+                  <Icon className="w-3.5 h-3.5 text-nerd-orange" />
                   <span>{link.name}</span>
                 </a>
               );
             })}
           </nav>
 
-          {/* Status Badge & CTA */}
-          <div className="hidden lg:flex items-center gap-3">
-            <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-nerd-surface border border-nerd-border text-xs font-mono">
-              <span className="w-2 h-2 rounded-full bg-nerd-accent animate-pulse" />
-              <span className="text-gray-400">SERVER:</span>
-              <span className="text-nerd-accent font-semibold">ONLINE</span>
-            </div>
+          {/* Quick Instant Actions */}
+          <div className="hidden md:flex items-center gap-3">
             <a
               href="#jogos"
-              className="px-4 py-2 rounded-md bg-nerd-accent text-nerd-bg font-mono font-bold text-xs hover:bg-emerald-400 hover:shadow-neon-green transition-all duration-200"
+              className="px-4 py-2 rounded-xl bg-gradient-to-r from-nerd-orange to-amber-600 hover:from-amber-600 hover:to-nerd-orange text-white font-mono font-bold text-xs shadow-neon-orange transition-all duration-200 flex items-center gap-1.5"
             >
-              EXPLORAR
+              <Gamepad2 className="w-4 h-4" />
+              VER TRAILERS
             </a>
           </div>
 
@@ -70,7 +89,7 @@ export function Navbar() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Abrir menu"
-            className="md:hidden p-2 rounded-md bg-nerd-surface border border-nerd-border text-gray-300 hover:text-nerd-cyan"
+            className="lg:hidden p-2 rounded-xl bg-[#141a24] border border-gray-700 text-gray-300 hover:text-nerd-orange"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -79,7 +98,7 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {isOpen && (
-        <div className="md:hidden border-b border-nerd-border bg-nerd-surface/95 backdrop-blur-lg px-4 py-4 space-y-2 font-mono text-sm">
+        <div className="lg:hidden border-b border-gray-800 bg-[#0d121b]/98 backdrop-blur-2xl px-4 py-4 space-y-1.5 font-mono text-sm">
           {navLinks.map((link) => {
             const Icon = link.icon;
             return (
@@ -87,9 +106,9 @@ export function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="flex items-center gap-3 px-3 py-2 rounded-md text-gray-200 hover:bg-nerd-card hover:text-nerd-cyan border border-transparent hover:border-nerd-border"
+                className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-200 hover:bg-[#1a2130] hover:text-nerd-orange border border-transparent hover:border-gray-700 transition-colors"
               >
-                <Icon className="w-4 h-4 text-nerd-accent" />
+                <Icon className="w-4 h-4 text-nerd-orange" />
                 <span>{link.name}</span>
               </a>
             );
