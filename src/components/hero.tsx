@@ -97,12 +97,12 @@ export function Hero() {
                     className="relative w-full h-full cursor-pointer group/screen"
                     onClick={() => setIsPlaying(true)}
                   >
-                    {/* Imagem de preview de jogo de alta qualidade da internet */}
+                    {/* Imagem de preview oficial de GTA VI da internet */}
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80"
-                      alt="Cyberpunk Gaming Setup & Trailer"
-                      className="w-full h-full object-cover group-hover/screen:scale-105 transition-transform duration-500 opacity-85"
+                      src="https://i.ytimg.com/vi/QdBZY2fkU-0/maxresdefault.jpg"
+                      alt="Grand Theft Auto VI Trailer 1 Oficial"
+                      className="w-full h-full object-cover group-hover/screen:scale-105 transition-transform duration-500 opacity-90"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-nerd-bg via-nerd-bg/40 to-transparent" />
                     
