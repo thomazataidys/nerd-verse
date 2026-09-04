@@ -96,10 +96,6 @@ export function News() {
                 <img
                   src={item.image}
                   alt={item.title}
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src =
-                      "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80";
-                  }}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-85"
                 />
                 <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/80 border border-nerd-border text-[10px] font-mono text-nerd-fuchsia font-bold">

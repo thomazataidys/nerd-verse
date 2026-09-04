@@ -1,4 +1,4 @@
-## Pending Commands — Correção dos trailers do YouTube e redesign inspirado no Instant Gaming
+## Pending Commands — Correção do erro de build da Vercel (remoção de event handlers em Server Components)
 
 ### Install
 ```bash
@@ -8,9 +8,9 @@ none
 ### Run
 ```bash
 git add .
-git commit -m "fix: update youtube trailer embeds with fallback links and redesign cards inspired by instant gaming"
+git commit -m "fix(build): remove onError event handlers from Server Components to resolve Vercel build error"
 git push origin main
 ```
 
 ### Notes
-Comandos para registrar a correção dos trailers com botão direto do YouTube e o novo visual inspirado no Instant Gaming.
+O erro na Vercel ocorria pela passagem de funções onError em Server Components durante a geração estática da página.
